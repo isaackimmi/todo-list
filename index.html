@@ -26,16 +26,9 @@
         <h6>Our simple TODO list</h6>
         <div>
           <div class="input-group my-5">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Insert Task"
-            />
+            <input id="task-input" type="text" class="form-control" placeholder="Insert Task" />
             <div class="input-group-append">
-              <button
-                class="btn btn-outline-secondary"
-                type="submit"
-              >
+              <button id="task-button" class="btn btn-outline-secondary" type="submit">
                 <i class="fa fa-plus"></i>
               </button>
             </div>
@@ -46,10 +39,45 @@
             <tr>
               <th scope="col">Task</th>
               <th scope="col">Completed</th>
+              <th scope="col"></th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody id="table-body">
+            <!-- <tr>
+                                  <td scope="col">Test Task</td>
+                                  <td scope="col">
+                                    <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                                    <i class="fa fa-circle green" aria-hidden="true"></i>
+                                  </td>
+                                </tr> -->
+          </tbody>
         </table>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="task-edit-modal" tabindex="-1" aria-labelledby="task-edit-modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Task</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="input-group">
+              <input id="task-edit-input" type="text" class="form-control" placeholder="Task">
+            </div>
+
+            <input id="task-edit-input-uuid" type="text" class="hide">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button id="edit-task-button" type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -68,6 +96,8 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+    <script src="/libraries/uuid.js"></script>
+    <script src="task.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
