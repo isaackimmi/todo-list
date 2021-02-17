@@ -98,13 +98,12 @@ function addTask() {
 function editTask() {
     const task = tasks.find((t) => t.id == taskEditInputUUID.value);
 
-    taskEditInputUUID.value = "";
+    taskEditInputUUID.value = ""
 
     if (!task) { return; }
-    
     task.task = taskEditInput.value;
-    $('#task-edit-modal').modal('hide');
     renderTasks();
+    $('#task-edit-modal').modal('hide');
 }
 
 taskButton.addEventListener("click", addTask);
