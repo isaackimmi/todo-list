@@ -1,6 +1,6 @@
 
 
-  
+ 
 const taskInput = document.getElementById("task-input");
 const taskButton = document.getElementById("task-button");
 const tableBody = document.getElementById("table-body");
