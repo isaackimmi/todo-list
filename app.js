@@ -11,6 +11,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
+const auth = firebase.auth();
 
 // Code below is to add a new task to the document.
 // db.collection("tasks").add({
@@ -84,7 +85,7 @@ async function renderTasks() {
             task.complete = data.complete;
             task.task = data.task;
 
-            console.log(task);
+            //console.log(task);
 
 
             const row = document.createElement("tr");
@@ -154,7 +155,7 @@ async function addTask() {
             task: taskInput.value,
             complete: false
         });
-        console.log(res);
+        //console.log(res);
     } catch (error) {
         console.log(error);
     }
@@ -169,7 +170,7 @@ async function editTask() {
     try {
         const taskId = taskEditIdInput.value;
     
-        console.log(taskEditIdInput.value)
+        //console.log(taskEditIdInput.value)
 
         await db.collection("tasks").doc(taskId).update({
             task: taskEditInput.value
@@ -190,3 +191,4 @@ taskButton.addEventListener("click", addTask);
 taskEditButton.addEventListener("click", editTask);
 
 renderTasks();
+

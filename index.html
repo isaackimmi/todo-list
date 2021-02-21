@@ -19,6 +19,29 @@
     <title>Todo App</title>
   </head>
   <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Just DO IT</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+              <button id="sign-in-button" type="button" class="btn btn-outline-primary">Sign-In</button>
+            </div>
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+              <button id="sign-out-button" type="button" class="btn btn-outline-primary ml-2">Sign-Out</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+
+
+
     <div class="container d-flex flex-wrap justify-content-center">
       <div class="card product-card">
         <h3>Todo List</h3>
@@ -55,6 +78,84 @@
       </div>
     </div>
 
+    <!-- Login Modal -->
+    <div class="modal fade" id="login-modal" tabindex="-1" aria-labelledby="login-modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign-In</h5>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+
+          <div class="modal-body">
+            <form id="sign-in-form">
+              <div class="form-group">
+                <label for="user-login-email">Email address</label>
+                <input id="user-login-email" type="email" class="form-control" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="user-login-password">Password</label>
+                <input id="user-login-password" type="password" class="form-control">
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+              <button id="close-login-modal" type="button" class="btn btn-secondary">Close</button>
+              <button id="confirm-login-button" type="button" class="btn btn-primary">Submit</button>
+              <button id="create-new-account-button" type="button" class="btn btn-primary">Create an Account</button>
+
+            </form>
+          </div>
+          
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Create Account Modal -->
+    <div class="modal fade" id="create-account-modal" tabindex="-1" aria-labelledby="create-account-modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create an Account</h5>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+
+          <div class="modal-body">
+            <form id="create-account-form">
+              <div class="form-group">
+                <label for="new-user-login-email">Email address</label>
+                <input id="new-user-login-email" type="email" class="form-control" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="new-user-login-password">Password</label>
+                <input id="new-user-login-password" type="password" class="form-control">
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                <label class="form-check-label" for="exampleCheck2">Check me out</label>
+              </div>
+              <button id="confirm-new-account-button" type="button" class="btn btn-primary">Create Account</button>
+
+            </form>
+          </div>
+          
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+
+
     <!-- Modal -->
     <div class="modal fade" id="task-edit-modal" tabindex="-1" aria-labelledby="task-edit-modal" aria-hidden="true">
       <div class="modal-dialog">
@@ -84,6 +185,7 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
 
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -105,8 +207,9 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
-    <script src="/libraries/uuid.js"></script>
+    <!-- <script src="/libraries/uuid.js"></script> -->
     <script src="task.js"></script>
     <script src="app.js"></script>
+    <script src="sign-in.js"></script>
   </body>
 </html>
